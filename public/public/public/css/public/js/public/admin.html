@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration – FINGOMUL_EMPIRE</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin">
+  <div id="admin-app">
+    <section id="login-view" class="section narrow" hidden>
+      <h2>Espace administrateur</h2>
+      <p class="muted">Connectez-vous pour gérer les services, réclamations et commandes.</p>
+      <form id="login-form" class="form">
+        <label>Nom d'utilisateur <input name="username" required></label>
+        <label>Mot de passe <input name="password" type="password" required></label>
+        <button class="btn" type="submit">Se connecter</button>
+      </form>
+      <p id="login-err" class="ok-box" style="background:#fdeaea;color:var(--danger);border-color:#f5c2c4" hidden></p>
+    </section>
+
+    <section id="dash-view" hidden>
+      <header class="dash-head">
+        <h2>⚙️ Administration FINGOMUL_EMPIRE</h2>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a href="/" target="_blank" class="btn btn-ghost sm" style="color:#fff;border-color:#fff">Voir le site</a>
+          <button id="logout-btn" class="btn btn-danger sm">Déconnexion</button>
+        </div>
+      </header>
+      <nav class="tabs">
+        <button data-tab="services" class="active">🛠 Services</button>
+        <button data-tab="complaints">📩 Réclamations</button>
+        <button data-tab="orders">📦 Commandes</button>
+      </nav>
+      <main id="tab-services" class="tab-panel"></main>
+      <main id="tab-complaints" class="tab-panel" hidden></main>
+      <main id="tab-orders" class="tab-panel" hidden></main>
+    </section>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
